@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن -حلويات حلوى يابلدي</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+       
+        .about-hero {
+           /* background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);*/
+            background: linear-gradient(green, white,transparent,black);
+           color: #000;
+            padding: 80px 5%;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .about-hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .about-hero p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+        
+        .about-content {
+            padding: 0 5% 80px;
+        }
+        
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .about-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 80px;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .about-section.reverse {
+            flex-direction: row-reverse;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-text h2 {
+            color: #2c3e50;
+            font-size: 32px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .about-text p {
+            font-size: 18px;
+            line-height: 1.8;
+           /* color: #555;*/
+           color: #000;
+            margin-bottom: 20px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+           /* background: linear-gradient(135deg, #3498db, #2c3e50);*/
+           background: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .feature-icon i {
+            font-size: 32px;
+            color: white;
+        }
+        
+        .feature-card h3 {
+            color: #000;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .team-section {
+            margin: 80px 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .team-member {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border: 5px solid #f8f9fa;
+        }
+        
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .member-info h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .member-info .position {
+            color: #3498db;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .stats-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 60px 5%;
+            margin: 80px 0;
+            border-radius: 15px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .stat-item p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .contact-cta {
+            text-align: center;
+            padding: 60px 5%;
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            margin: 80px 0;
+        }
+        
+        .contact-cta h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+        
+        .contact-cta p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary, .btn-secondary {
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-primary {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+        }
+        
+        .btn-secondary {
+            background-color: white;
+            color: #3498db;
+            border: 2px solid #3498db;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-3px);
+        }
+        
+        /* حركات */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* تصميم متجاوب */
+        @media (max-width: 768px) {
+            .about-hero {
+                padding: 60px 5%;
+            }
+            
+            .about-hero h1 {
+                font-size: 32px;
+            }
+            
+            .about-text h2 {
+                font-size: 26px;
+            }
+            
+            .about-section, .about-section.reverse {
+                flex-direction: column;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .about-hero h1 {
+                font-size: 28px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .feature-card, .team-member {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- شريط الوقت العلوي -->
+    <div class="top-bar">
+        <div class="time-display" id="timeDisplay"></div>
+        <div class="contact-info">
+            <span><i class="fas fa-phone"></i> +4915212872977</span>
+            <span><i class="fas fa-envelope"></i> zelalalshami@gmail.com</span>
+        </div>
+    </div>
+
+    <!-- شريط التنقل -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <a href="index.html" style="text-decoration: none; display: flex; align-items: center;">
+                    <div class="logo">
+                        <!-- <i class="fas fa-gem"></i> -->
+                     <img src="img/logo.jpg" alt="logo">
+
+                    </div>
+                    <div class="store-name">
+                        <h1> حلويات حلوى يابلدي</h1>
+                        <p>متجر الحلويات المتميز</p>
+                    </div>
+                </a>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="index.html#products">المنتجات</a></li>
+                <li><a href="about.html" class="active">من نحن</a></li>
+                <li><a href="index.html#contact">اتصل بنا</a></li>
+            </ul>
+            
+            <div class="nav-icons">
+                <a href="https://wa.me/+4915212872977" class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://instagram.com/nourstore" class="instagram-btn" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="index.html" class="cart-btn">
+                    <i class="fas fa-store"></i>
+                </a>
+            </div>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- قسم الهيرو -->
+    <section class="about-hero">
+        <h1>من نحن</h1>
+        <p>حلويات حلوى يابلدي , ليس مجرد متجر إلكتروني , بل هو ملاذك الأول لدلل نفسك ومذاقك ومذاق ضيوفك</p>
+
+    <!-- المحتوى الرئيسي -->
+    <div class="about-content">
+        <div class="section-container">
+            <!-- قسم الرسالة -->
+            <section class="about-section">
+                <div class="about-text">
+                    <h2>رسالتنا</h2>
+                    <p>في  متجر حلويات حلوى يابلدي نهدف إلى توفير أطيب و أشهى  الحلويات والمعجنات بأفضل الأسعار مع ضمان الجودة والكفاءة. نحن نسعى جاهدين لتقديم تجربة تسوق استثنائية لعملائنا الكرام.</p>
+                    <p>نحرص على   سلامتك من اي مواد أو صبغات ضارة بصحتك , عميلنا العزيز , لذلك نعمل على تقديم منتجات متنوعة تناسب جميع الميزانيات والاحتياجات.</p>
+                    <p>فريقنا من الخبراء دائماً على استعداد لمساعدتك في اختيار المنتج المناسب وضمان رضاك التام عن تجربة الشراء.</p>
+                </div>
+                <div class="about-image">
+                    <img src="img/knafiFistek.jpg" alt=" منتجاتنا">
+                </div>
+            </section>
+
+            <!-- قسم القيم -->
+            <section class="about-section reverse">
+                <div class="about-text">
+                    <h2>قيمنا</h2>
+                    <p>نحن نلتزم بأعلى معايير الجودة والشفافية في كل ما نقدمه. قيمنا هي الأساس الذي يقوم عليه متجرنا:</p>
+                    <ul style="list-style: none; padding-right: 20px;">
+                        <li style="margin-bottom: 15px; font-size: 18px;">
+                            <i class="fas fa-check-circle" style="color: green; margin-left: 10px;"></i>
+                            <strong>النظافة والجودة أولاً:</strong> نضمن أن جميع منتجاتنا أصلية وذات جودة عالية
+                        </li>
+                        <li style="margin-bottom: 15px; font-size: 18px;">
+                            <i class="fas fa-check-circle" style="color: green; margin-left: 10px;"></i>
+                            <strong>رضا العميل:</strong> سعادتك هي أهم أولوياتنا
+                        </li>
+                        <li style="margin-bottom: 15px; font-size: 18px;">
+                            <i class="fas fa-check-circle" style="color: green; margin-left: 10px;"></i>
+                            <strong>الشفافية:</strong> أسعار واضحة ومواصفات دقيقة
+                        </li>
+                        <li style="margin-bottom: 15px; font-size: 18px;">
+                            <i class="fas fa-check-circle" style="color: green; margin-left: 10px;"></i>
+                            <strong>الدعم المستمر:</strong> فريق دعم فني متاح دائماً لمساعدتك
+                        </li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="img/kekBig.jpg" alt="kekFistek">
+                </div>
+            </section>
+
+            <!-- ميزاتنا -->
+            <section>
+                <h2 style="text-align: center; color: #000; margin-bottom: 50px; font-size: 32px;">لماذا تختار متجر حلويات حلوى يابلدي ؟ </h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>ضمان الجودة</h3>
+                        <p>جميع حلوياتنا مضمونة من أي مواد ضارة .</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h3>شحن سريع</h3>
+                        <p>توصيل سريع خلال 24-48 ساعة في  المناطق القريبة من موقعنا مع تتبع الشحنة خطوة بخطوة.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>دعم فني 24/7</h3>
+                        <p>فريق دعم فني متاح على مدار الساعة عبر الواتساب والهاتف والبريد الإلكتروني.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <h3>أسعار منافسة</h3>
+                        <p>أفضل الأسعار في السوق مع عروض وتخفيضات مستمرة طوال العام.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- الإحصائيات -->
+            <section class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3 id="yearsCount">0</h3>
+                        <p>سنوات من الخبرة</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 id="productsCount">0</h3>
+                        <p>منتج متوفر</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 id="clientsCount">0</h3>
+                        <p>عميل راضي</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 id="ordersCount">0</h3>
+                        <p>طلب منفذ</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- الفريق -->
+            <!-- <section class="team-section">
+                <h2 style="text-align: center; color: #2c3e50; margin-bottom: 50px; font-size: 32px;">فريقنا المتميز</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="أحمد النور">
+                        </div>
+                        <div class="member-info">
+                            <h4>أحمد النور</h4>
+                            <p class="position">المؤسس والمدير التنفيذي</p>
+                            <p>خبرة 10 سنوات في مجال التجارة الإلكترونية والتسويق الرقمي.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="سارة محمد">
+                        </div>
+                        <div class="member-info">
+                            <h4>سارة محمد</h4>
+                            <p class="position">مديرة خدمة العملاء</p>
+                            <p>متخصصة في إدارة علاقات العملاء وتقديم أفضل تجربة تسوق.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="خالد فارس">
+                        </div>
+                        <div class="member-info">
+                            <h4>خالد فارس</h4>
+                            <p class="position">خبير التقنية</p>
+                            <p>مختص في تقييم واختبار الأجهزة الإلكترونية والإكسسوارات.</p>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+
+            <!-- دعوة للتواصل -->
+            <section class="contact-cta">
+                <h2>هل لديك استفسار؟</h2>
+                <p>فريقنا مستعد للإجابة على جميع استفساراتك ومساعدتك في اختيار المنتج المناسب. لا تتردد في التواصل معنا عبر أي من الوسائل التالية:</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/+4915212872977" class="btn-primary" target="_blank">
+                        <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
+                    </a>
+                    <a href="tel:+4915212872977" class="btn-secondary">
+                        <i class="fas fa-phone"></i> اتصل بنا الآن
+                    </a>
+                    <a href="mailto:zelalalshami@gmail.com" class="btn-secondary">
+                        <i class="fas fa-envelope"></i> أرسل بريداً إلكترونياً
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- فوتر -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo-container footer-logo">
+                    <div class="logo">
+                        <!-- <i class="fas fa-gem"></i> -->
+                     <img src="img/logo.jpg" alt="logo">
+
+                    </div>
+                    <div class="store-name">
+                        <h3> حلويات حلوى يابلدي</h3>
+                        <p>النظافة أولاً</p>
+                    </div>
+                </div>
+                <p>متجر حلويات حلوى يابلدي الرائد في تقديم أطيب  الحلويات بأفضل الأسعار وضمان النظافة.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="index.html#products">المنتجات</a></li>
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="index.html#contact">اتصل بنا</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>تواصل معنا</h4>
+                <div class="social-icons">
+                    <a href="https://wa.me/+4915212872977" class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://instagram.com/nourstore" class="instagram-btn" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- <a href="https://twitter.com/nourstore" class="twitter-btn" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a> -->
+                    <a href="mailto:zelalalshami@gmail.com" class="email-btn">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <p><i class="fas fa-map-marker-alt"></i> ألمانيا</p>
+                <p><i class="fas fa-phone"></i> +4915212872977</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025-2026  حلويات حلوى يابلدي. جميع الحقوق محفوظة. | <a href="about.html" style="color: #3498db; text-decoration: none;">من نحن</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // تحديث الوقت
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('ar-SA', { 
+                hour: '2-digit', 
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true 
+            });
+            document.getElementById('timeDisplay').textContent = `التوقيت: ${timeString}`;
+        }
+        
+        // عداد الإحصائيات المتحرك
+        function animateCounter(elementId, targetValue, duration = 2000) {
+            const element = document.getElementById(elementId);
+            const startValue = 0;
+            const increment = targetValue / (duration / 16);
+            let currentValue = startValue;
+            
+            const timer = setInterval(() => {
+                currentValue += increment;
+                if (currentValue >= targetValue) {
+                    element.textContent = targetValue.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(currentValue).toLocaleString();
+                }
+            }, 16);
+        }
+        
+        // إعدادات القائمة المتحركة للهواتف
+        function setupMobileMenu() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                    
+                    if (navLinks.style.display === 'flex') {
+                        navLinks.style.flexDirection = 'column';
+                        navLinks.style.position = 'absolute';
+                        navLinks.style.top = '100%';
+                        navLinks.style.right = '0';
+                        navLinks.style.backgroundColor = 'white';
+                        navLinks.style.width = '200px';
+                        navLinks.style.padding = '20px';
+                        navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+                        navLinks.style.borderRadius = '0 0 0 10px';
+                        navLinks.style.zIndex = '1000';
+                        
+                        navLinks.querySelectorAll('li').forEach(li => {
+                            li.style.margin = '10px 0';
+                        });
+                    }
+                });
+                
+                // إغلاق القائمة عند النقر على رابط
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (window.innerWidth <= 992) {
+                            navLinks.style.display = 'none';
+                        }
+                    });
+                });
+            }
+        }
+        
+        // عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            // تحديث الوقت
+            updateTime();
+            setInterval(updateTime, 1000);
+            
+            // تشغيل العدادات المتحركة
+            setTimeout(() => {
+                animateCounter('yearsCount', 5);
+                animateCounter('productsCount', 150);
+                animateCounter('clientsCount', 2500);
+                animateCounter('ordersCount', 5000);
+            }, 500);
+            
+            // إعداد القائمة المتحركة
+            setupMobileMenu();
+            
+            // تحديث تصميم القائمة عند تغيير حجم النافذة
+            window.addEventListener('resize', function() {
+                const navLinks = document.querySelector('.nav-links');
+                if (window.innerWidth > 992) {
+                    navLinks.style.display = 'flex';
+                    navLinks.style.flexDirection = 'row';
+                    navLinks.style.position = 'static';
+                    navLinks.style.backgroundColor = 'transparent';
+                    navLinks.style.width = 'auto';
+                    navLinks.style.padding = '0';
+                    navLinks.style.boxShadow = 'none';
+                    
+                    navLinks.querySelectorAll('li').forEach(li => {
+                        li.style.margin = '0 0 0 25px';
+                    });
+                } else {
+                    navLinks.style.display = 'none';
+                }
+            });
+            
+            // تفعيل الروابط النشطة في القائمة
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
