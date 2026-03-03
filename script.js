@@ -17,19 +17,19 @@ const productsData = [
     },
     {
         id: 3,
-        name: "بقلاوة عربية بالفستق",
+        name: "  بقلاوة عربية بالفستق الحلبي",
         price: 30,
         image: "img/knafiFistek.jpg",
         category: "candy3",
-        description: "بقلاوة عربية بالفستق سعر الكيلو 30 يورو "
+        description: "بقلاوة عربية بالفستق الحلبي ,سعر الكيلو 30 يورو "
     },
     {
         id: 4,
-        name: " بقلاوة عربية سادة ",
+        name: " بقلاوة عربية بجوز ",
         price: 30,
         image: "img/knafiSade.jpg",
         category: "candy3",
-        description: "بقلاوة عربية سادة سعر الكيلو 30 يورو "
+        description: "بقلاوة عربية بجوز, سحر النكهة , سعر الكيلو 30 يورو "
     },
     {
         id: 5,
@@ -72,12 +72,20 @@ const productsData = [
         description: "بيتيفور مغطى بجوز الهند , سعر الكيلو 7 يورو"
     },
       {
-        id: 9,
+        id: 10,
         name: " حلاوة الجبن ",
         price: 15,
         image: "img/jbn.jpg",
         category: "candy3",
         description: "  حلاوة الجبن , بالقشطة , نظافة تامة مع القطر سعر الكيلو 15 يورو"
+    },
+      {
+        id: 11,
+        name: "  بيتيفور بالقرفة ",
+        price: 9,
+        image: "img/betefor4.jpg",
+        category: "candy2",
+        description: "   بيتيفور بطعم القرفة, طعمٌ لا ينسى,  سعر الكيلو 9 يورو"
     }
 ];
 
@@ -249,7 +257,7 @@ function updateWhatsAppLink(total) {
     message += `\nالمجموع: ${total} €`;
     
     const encodedMessage = encodeURIComponent(message);
-    document.getElementById('checkoutBtn').href = `https://wa.me/963930752391?text=${encodedMessage}`;
+    document.getElementById('checkoutBtn').href = `https://wa.me/+4915212872977?text=${encodedMessage}`;
 }
 
 // إفراغ السلة
@@ -387,4 +395,5 @@ document.addEventListener('DOMContentLoaded', function() {
             navLinks.style.display = 'none';
         }
     });
+
 });
