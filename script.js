@@ -83,7 +83,7 @@ const productsData = [
         id: 11,
         name: "  بيتيفور بالقرفة ",
         price: 9,
-        image: "img/betefor4.jpg",
+        image: "img/betefor44.jpg",
         category: "candy2",
         description: "   بيتيفور بطعم القرفة, طعمٌ لا ينسى,  سعر الكيلو 9 يورو"
     }
@@ -397,3 +397,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
