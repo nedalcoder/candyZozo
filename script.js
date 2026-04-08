@@ -97,7 +97,7 @@ const productsData = [
     },
      {
         id: 13,
-        name: "  Cupcakes,كب كيك بحشوات متعددة  ",
+        name: "  Cupcakes,كب كيك  (كنافة)  ",
         price: 1 ,
         image: "img/capKekKnafe.jpg",
         category: "candy3",
@@ -296,7 +296,7 @@ function updateWhatsAppLink(total) {
     message += `\nالمجموع: ${total} €`;
     
     const encodedMessage = encodeURIComponent(message);
-    document.getElementById('checkoutBtn').href = `https://wa.me/+4915212872977?text=${encodedMessage}`;
+    document.getElementById('checkoutBtn').href = `https://wa.me/+4915215460241?text=${encodedMessage}`;
 }
 
 // إفراغ السلة
@@ -434,4 +434,209 @@ document.addEventListener('DOMContentLoaded', function() {
             navLinks.style.display = 'none';
         }
     });
+});
+// الطلب عبر انستا
+// دالة لتوليد نص الطلب المنسق
+function generateOrderMessage() {
+    if (cart.length === 0) return "";
+    
+    let total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    let message = "🛍️ طلب جديد من حلويات حلوة يابلدي 🛍️\n\n";
+    message += "━━━━━━━━━━━━━━━━━━━━\n";
+    message += "📋 تفاصيل الطلب:\n";
+    message += "━━━━━━━━━━━━━━━━━━━━\n\n";
+    
+    cart.forEach((item, index) => {
+        message += `🔸 ${item.name}\n`;
+        message += `   • الكمية: ${item.quantity}\n`;
+        message += `   • السعر: ${item.price * item.quantity} €\n\n`;
+    });
+    
+    message += "━━━━━━━━━━━━━━━━━━━━\n";
+    message += `💰 المجموع الكلي: ${total} €\n`;
+    message += "━━━━━━━━━━━━━━━━━━━━\n\n";
+    message += "📍   العنوان الكامل ________\n";
+    message += "📞 رقم الهاتف: ______\n";
+   // message += "🙏 شكراً لثقتكم بحلويات حلوة يابلدي 💝\n\n";
+    message += "✨ Helwa Ya Baladi Sweets ✨";
+    
+    return message;
+}
+
+// دالة لنسخ النص إلى الحافظة
+async function copyToClipboard(text) {
+    try {
+        await navigator.clipboard.writeText(text);
+        return true;
+    } catch (err) {
+        // طريقة بديلة للمتصفحات القديمة
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        return true;
+    }
+}
+
+// دالة لعرض رسالة نجاح مؤقتة
+function showCopySuccess() {
+    const messageDiv = document.getElementById('copyMessage');
+    messageDiv.style.display = 'block';
+    messageDiv.innerHTML = '<div class="copy-success">✅ تم نسخ تفاصيل الطلب! جاري التوجيه إلى إنستغرام...</div>';
+    messageDiv.className = 'copy-success';
+    
+    setTimeout(() => {
+        messageDiv.style.display = 'none';
+    }, 2000);
+}
+
+// دالة لنسخ الطلب والذهاب إلى إنستغرام
+async function copyOrderAndSendToInstagram() {
+    if (cart.length === 0) {
+        alert("⚠️ سلة التسوق فارغة!");
+        return;
+    }
+    
+    const orderMessage = generateOrderMessage();
+    
+    // نسخ النص إلى الحافظة
+    const copied = await copyToClipboard(orderMessage);
+    
+    if (copied) {
+        showCopySuccess();
+        
+        // إغلاق النافذة المنبثقة
+        closeOrderModal();
+        
+        // الانتظار نصف ثانية ثم فتح إنستغرام
+        setTimeout(() => {
+            // رابط إنستغرام المباشر لـ syrian__sweets_
+            const instagramUsername = "syrian__sweets_";
+            const instagramUrl = `https://www.instagram.com/${instagramUsername}/`;
+            
+            // فتح إنستغرام في نافذة جديدة
+            window.open(instagramUrl, '_blank');
+            
+            // رسالة توجيهية إضافية
+            setTimeout(() => {
+                alert(`✅ تم نسخ تفاصيل الطلب بنجاح!\n\n📋 تم نسخ المعلومات التالية:\n${orderMessage.substring(0, 150)}...\n\n📱 تم فتح صفحة إنستغرام.\n💬 الرجاء لصق الطلب (اضغط مع الاستمرار ثم اختر "لصق") وإرساله إلى حساب ${instagramUsername}\n\n🙏 شكراً لطلبك!`);
+            }, 1000);
+        }, 500);
+    } else {
+        alert("❌ حدث خطأ في نسخ التفاصيل. يرجى المحاولة مرة أخرى.");
+    }
+}
+
+// عرض نافذة تفاصيل الطلب (معدل)
+function showOrderDetailsModal() {
+    if (cart.length === 0) {
+        alert("⚠️ سلة التسوق فارغة! أضف بعض المنتجات أولاً.");
+        return false;
+    }
+    
+    const modal = document.getElementById('orderModal');
+    const orderDetailsDiv = document.getElementById('orderDetails');
+    const copyMessage = document.getElementById('copyMessage');
+    
+    // إخفاء رسالة النسخ السابقة
+    copyMessage.style.display = 'none';
+    
+    let total = 0;
+    let itemsHTML = '<div class="order-items-list">';
+    itemsHTML += '<div class="order-item-row" style="font-weight: bold; background-color: #f8f9fa; border-radius: 8px;">';
+    itemsHTML += '<div class="order-item-name">🍰 المنتج</div>';
+    itemsHTML += '<div class="order-item-qty">🔢 الكمية</div>';
+    itemsHTML += '<div class="order-item-price">💰 السعر</div>';
+    itemsHTML += '</div>';
+    
+    cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        itemsHTML += `
+            <div class="order-item-row">
+                <div class="order-item-name">${item.name}</div>
+                <div class="order-item-qty">${item.quantity}</div>
+                <div class="order-item-price">${itemTotal} €</div>
+            </div>
+        `;
+    });
+    
+    itemsHTML += '</div>';
+    itemsHTML += `<div class="order-total">
+        <span>💵 المجموع الكلي:</span>
+        <span style="font-size: 1.3em; color: #e67e22;">${total} €</span>
+    </div>`;
+    
+    // إضافة نص توضيحي
+    itemsHTML += '<div style="margin-top: 15px; padding: 10px; background-color: #f0f8ff; border-radius: 8px; font-size: 12px; color: #666;">';
+    itemsHTML += '📌 <strong>ملاحظة:</strong> سيتم نسخ تفاصيل الطلب وفتح إنستغرام، ثم قم بلصق الطلب في المحادثة';
+    itemsHTML += '</div>';
+    
+    orderDetailsDiv.innerHTML = itemsHTML;
+    modal.style.display = 'flex';
+    return true;
+}
+
+// دالة تأكيد الطلب عبر إنستغرام (احتفظ بها كخيار ثانوي)
+function confirmInstagramOrder() {
+    copyOrderAndSendToInstagram();
+}
+
+// إغلاق النافذة المنبثقة
+function closeOrderModal() {
+    document.getElementById('orderModal').style.display = 'none';
+}
+
+// تعديل دالة إعداد السلة (تأكد من وجودها)
+function setupCart() {
+    const cartBtn = document.getElementById('cartBtn');
+    const cartSidebar = document.getElementById('cartSidebar');
+    const closeCart = document.getElementById('closeCart');
+    const clearCartBtn = document.getElementById('clearCart');
+    
+    // فتح السلة
+    if (cartBtn) {
+        cartBtn.addEventListener('click', function() {
+            cartSidebar.classList.add('open');
+            displayCartItems();
+        });
+    }
+    
+    // إغلاق السلة
+    if (closeCart) {
+        closeCart.addEventListener('click', function() {
+            cartSidebar.classList.remove('open');
+        });
+    }
+    
+    // إغلاق السلة عند النقر خارجها
+    document.addEventListener('click', function(e) {
+        if (cartSidebar && !cartSidebar.contains(e.target) && cartBtn && !cartBtn.contains(e.target) && cartSidebar.classList.contains('open')) {
+            cartSidebar.classList.remove('open');
+        }
+    });
+    
+    // إفراغ السلة
+    if (clearCartBtn) {
+        clearCartBtn.addEventListener('click', clearCart);
+    }
+    
+    // إضافة مستمع لزر إنستغرام في السلة
+    const instagramCheckoutBtn = document.querySelector('.instagram-checkout');
+    if (instagramCheckoutBtn) {
+        instagramCheckoutBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showOrderDetailsModal();
+        });
+    }
+}
+
+// إغلاق النافذة عند النقر خارج المحتوى
+document.addEventListener('click', function(e) {
+    const modal = document.getElementById('orderModal');
+    if (modal && e.target === modal) {
+        closeOrderModal();
+    }
 });

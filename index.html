@@ -92,7 +92,7 @@
         "image": "https://yourdomain.com/img/store.jpg",
         "@id": "https://yourdomain.com",
         "url": "https://yourdomain.com",
-        "telephone": "+4915212872977",
+        "telephone": "+4915215460241",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": " كوليدا",
@@ -154,7 +154,7 @@
     <div class="top-bar">
         <div class="time-display" id="timeDisplay"></div>
         <div class="contact-info">
-            <span><i class="fas fa-phone"></i> +4915212872977</span>
+            <span><i class="fas fa-phone"></i> +4915215460241</span>
             <span><i class="fas fa-envelope"></i> zelalalshami@gmail.com</span>
         </div>
     </div>
@@ -182,10 +182,10 @@
             </ul>
             
             <div class="nav-icons">
-                <a href="https://wa.me/+4915212872977" class="whatsapp-btn" target="_blank">
+                <a href="https://wa.me/+4915215460241" class="whatsapp-btn" target="_blank">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="https://instagram.com/nourstore" class="instagram-btn" target="_blank">
+                <a href="https://instagram.com/syrian__sweets_" class="instagram-btn" target="_blank">
                     <i class="fab fa-instagram"></i>
                 </a>
                 <button class="cart-btn" id="cartBtn">
@@ -247,12 +247,30 @@
                 <a href="https://wa.me/+4915215460241?text=أريد شراء المنتجات التالية:" class="checkout-btn" id="checkoutBtn" target="_blank">
                     <i class="fab fa-whatsapp"></i> إتمام الطلب عبر واتساب
                 </a>
-                <a href="https://instagram.com/nourstore" class="checkout-btn instagram-checkout" target="_blank">
+                <a href="https://instagram.com/syrian__sweets_" class="checkout-btn instagram-checkout" target="_blank">
                     <i class="fab fa-instagram"></i> إتمام الطلب عبر إنستغرام
                 </a>
             </div>
         </div>
     </div>
+    <!-- نافذة منبثقة  -->
+     <!-- نافذة تفاصيل الطلب المنبثقة -->
+
+<div id="orderModal" class="order-modal">
+    <div class="order-modal-content">
+        <span class="close-modal">&times;</span>
+        <h3 class="order-modal-title">📋 تفاصيل طلبك</h3>
+        <div id="orderDetails"></div>
+        <div class="order-modal-buttons">
+            <button class="cancel-order" onclick="closeOrderModal()">إلغاء</button>
+            <button class="copy-order-btn" onclick="copyOrderAndSendToInstagram()">
+                📋 نسخ والذهاب إلى إنستغرام
+            </button>
+        </div>
+        <div id="copyMessage" style="display: none;"></div>
+    </div>
+</div>
+  
 
     <!-- فوتر -->
     <footer>
@@ -288,7 +306,7 @@
                     <a href="https://wa.me/+4915215460241" class="whatsapp-btn" target="_blank">
                         <i class="fab fa-whatsapp"></i>
                     </a>
-                    <a href="https://instagram.com/nourstore" class="instagram-btn" target="_blank">
+                    <a href="https://instagram.com/syrian__sweets_" class="instagram-btn" target="_blank">
                         <i class="fab fa-instagram"></i>
                     </a>
                     <!-- <a href="https://twitter.com/nourstore" class="twitter-btn" target="_blank">

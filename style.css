@@ -605,6 +605,181 @@ footer {
     color: #bdc3c7;
     font-size: 14px;
 }
+/* نافذة تفاصيل الطلب المنبثقة */
+.order-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.order-modal-content {
+    background: white;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 20px;
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: #000;
+}
+
+.order-modal-title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.order-items-list {
+    margin: 20px 0;
+}
+
+.order-item-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.order-item-name {
+    flex: 2;
+    font-weight: 600;
+}
+
+.order-item-qty {
+    flex: 1;
+    text-align: center;
+}
+
+.order-item-price {
+    flex: 1;
+    text-align: left;
+    color: #e67e22;
+    font-weight: 600;
+}
+
+.order-total {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #27ae60;
+}
+
+.order-modal-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.order-modal-buttons button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+
+.order-modal-buttons button:hover {
+    transform: scale(1.02);
+}
+
+.confirm-order {
+    background-color: #e4405f;
+    color: white;
+}
+
+.cancel-order {
+    background-color: #95a5a6;
+    color: white;
+}
+/* new */
+/* إضافة أنماط لأزرار النسخ */
+.copy-order-btn {
+    background-color: #3b5998;
+    color: white;
+}
+
+.copy-order-btn:hover {
+    background-color: #2d4373;
+}
+
+.order-modal-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.order-modal-buttons button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: transform 0.2s;
+    min-width: 120px;
+}
+
+.copy-success {
+    background-color: #27ae60;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 10px;
+    animation: fadeOut 2s ease;
+    font-size: 14px;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { opacity: 0; display: none; }
+}
 
 /* تصميم متجاوب */
 @media (max-width: 992px) {
