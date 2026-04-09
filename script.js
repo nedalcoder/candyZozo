@@ -99,7 +99,7 @@ const productsData = [
         id: 13,
         name: "  Cupcakes,كب كيك  (كنافة)  ",
         price: 1 ,
-        image: "img/hlwetjbnfstk.jpg",
+        image: "img/knafikek.jpg",
         category: "candy3",
         description: "   كب كيك بحشوات متعددة , سعر القطعة 1 يورو , مع عرض 6 قطع ب 5 يورو ,Cupcakes aus kunafa mit verschiedenen Füllungen      "
     },
@@ -123,7 +123,7 @@ const productsData = [
         id: 16,
         name: "  حلاوة الجبن مع الفستق الحلبي",
         price: 15 ,
-        image: "img/hlwetjbnfstk.jpg",
+        image: "img/jbnfstik.jpg",
         category: "candy3",
         description:   "حلاوة الجبن مع الفستق الحلبي وماء الورد . سعر الكيلو 15 يورو , kase-Halawa -wenn Pistazien , kase und Rosenwasser zusammenkommen"
     }
