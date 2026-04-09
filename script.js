@@ -99,7 +99,7 @@ const productsData = [
         id: 13,
         name: "  Cupcakes,كب كيك  (كنافة)  ",
         price: 1 ,
-        image: "img/capkekknafe.jpg",
+        image: "img/hlwetjbnfstk.jpg",
         category: "candy3",
         description: "   كب كيك بحشوات متعددة , سعر القطعة 1 يورو , مع عرض 6 قطع ب 5 يورو ,Cupcakes aus kunafa mit verschiedenen Füllungen      "
     },
