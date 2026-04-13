@@ -126,7 +126,16 @@ const productsData = [
         image: "img/jbnfstik.jpg",
         category: "candy3",
         description:   "حلاوة الجبن مع الفستق الحلبي وماء الورد . سعر الكيلو 15 يورو , kase-Halawa -wenn Pistazien , kase und Rosenwasser zusammenkommen"
+    },
+      {
+        id: 17,
+        name: "   كاتو بالفواكه",
+        price: 25 ,
+        image: "img/kek3.jpg",
+        category: "candy1",
+        description: "قالب كاتو محشي بالفواكه والكريما , السعر 25 يورو "
     }
+
 ]
 // سلة التسوق
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
