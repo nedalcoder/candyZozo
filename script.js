@@ -305,7 +305,7 @@ function updateWhatsAppLink(total) {
     message += `\nالمجموع: ${total} €`;
     
     const encodedMessage = encodeURIComponent(message);
-    document.getElementById('checkoutBtn').href = `https://wa.me/+4915215460241?text=${encodedMessage}`;
+    document.getElementById('checkoutBtn').href = `https://wa.me/+4915216095584?text=${encodedMessage}`;
 }
 
 // إفراغ السلة
